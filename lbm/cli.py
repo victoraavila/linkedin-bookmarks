@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import getpass
 import json
 import sys
 from pathlib import Path
@@ -201,11 +202,11 @@ def cmd_login(args) -> int:
             f"Values are stored only in {db.accounts_db_path()}\n"
         )
         try:
-            li_at = _clean(input("li_at>       "))
+            li_at = _clean(getpass.getpass("li_at>       "))
             if _has_session_cookies(li_at):
                 cookies = li_at
             else:
-                jsessionid = input("JSESSIONID>  ")
+                jsessionid = getpass.getpass("JSESSIONID>  ")
                 cookies = _build_cookie_string(li_at, jsessionid)
         except (EOFError, KeyboardInterrupt):
             print("\nlogin cancelled", file=sys.stderr)

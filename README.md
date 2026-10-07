@@ -90,7 +90,7 @@ You can also paste the two values by hand (DevTools → Application → Cookies 
 `https://www.linkedin.com`):
 
 ```bash
-uv run lbm login            # prompts for li_at, then JSESSIONID
+uv run lbm login            # prompts for li_at, then JSESSIONID (input is hidden)
 ```
 
 Other accepted inputs:
@@ -333,10 +333,10 @@ Already added to `~/.config/opencode/opencode.json`:
   "servers": {
     "linkedin-bookmarks": {
       "type": "local",
-      "command": ["/Users/victoravila/Desktop/Avila Studios/opencode-plugins/linkedin-bookmarks/.venv/bin/python",
+      "command": ["/absolute/path/to/linkedin-bookmarks/.venv/bin/python",
                   "-m", "lbm.mcp_server"],
-      "cwd": "/Users/victoravila/Desktop/Avila Studios/opencode-plugins/linkedin-bookmarks",
-      "environment": { "LB_DATA_DIR": "/Users/victoravila/Desktop/Avila Studios/opencode-plugins/linkedin-bookmarks/data" }
+      "cwd": "/absolute/path/to/linkedin-bookmarks",
+      "environment": { "LB_DATA_DIR": "/absolute/path/to/linkedin-bookmarks/data" }
     }
   }
 }
